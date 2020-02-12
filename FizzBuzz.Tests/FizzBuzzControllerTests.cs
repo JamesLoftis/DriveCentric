@@ -24,7 +24,7 @@ namespace FizzBuzz.Tests
             var getFailed = false;
             try
             {
-                testController.Get(null);
+                testController.Post(null);
             } 
             catch(ArgumentException)
             {
@@ -39,7 +39,7 @@ namespace FizzBuzz.Tests
             var getFailed = false;
             try
             {
-                testController.Get(-1);
+                testController.Post(-1);
             } 
             catch(ArgumentException)
             {
@@ -54,7 +54,7 @@ namespace FizzBuzz.Tests
             var getFailed = false;
             try
             {
-                testController.Get(1);
+                testController.Post(1);
             } 
             catch(ArgumentException)
             {
@@ -69,7 +69,7 @@ namespace FizzBuzz.Tests
             var getFailed = false;
             try
             {
-                testController.Get(2);
+                testController.Post(2);
             } 
             catch(ArgumentException)
             {

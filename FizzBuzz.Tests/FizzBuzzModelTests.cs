@@ -29,7 +29,7 @@ namespace FizzBuzz.Tests
         {
             const int min = 1;
             const int max = 100;
-            var testArray = testModel.GetFizzBuzzCollection(min, max).ToArray();
+            var testArray = testModel.CreateFizzBuzzCollection(min, max).ToArray();
             Assert.True(testArray.Last() == max.ToString());
         }
 
@@ -39,7 +39,7 @@ namespace FizzBuzz.Tests
             string[] testArray;
             for(var i = 0; i < 5; i++)
             {
-                testArray = testModel.GetFizzBuzzCollection(i, 100).ToArray();
+                testArray = testModel.CreateFizzBuzzCollection(i, 100).ToArray();
                 Assert.True(testArray.First() == i.ToString());
             }
         }
@@ -50,7 +50,7 @@ namespace FizzBuzz.Tests
             string[] testArray;
             for(var i = 10; i < 15; i++)
             {
-                testArray = testModel.GetFizzBuzzCollection(1, i).ToArray();
+                testArray = testModel.CreateFizzBuzzCollection(1, i).ToArray();
                 Assert.True(testArray.Last() == i.ToString());
             }
         }
