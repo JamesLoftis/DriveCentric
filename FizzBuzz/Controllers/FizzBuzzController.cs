@@ -13,16 +13,17 @@ namespace FizzBuzz.Controllers
     public class FizzBuzzController : ControllerBase
     {
         private readonly ILogger<FizzBuzzController> _logger;
-
+        private readonly FizzBuzzModel fizzBuzzModel;
         public FizzBuzzController(ILogger<FizzBuzzController> logger)
         {
             _logger = logger;
+            fizzBuzzModel = new FizzBuzzModel();
         }
 
         [HttpGet]
-        public FizzBuzz Get()
+        public string[] Get()
         {
-            return FizzBuzzModel.GetFizzBuzz();
+            return fizzBuzzModel.GetFizzBuzzCollection(1, 100).ToArray();
         }
     }
 }

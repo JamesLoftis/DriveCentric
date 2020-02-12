@@ -1225,6 +1225,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "FizzBuzz/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/FizzBuzz.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FizzBuzz.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -4618,10 +4631,16 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "FizzBuzz/1.0.0": {
+      "type": "project",
+      "path": "../FizzBuzz/FizzBuzz.csproj",
+      "msbuildProject": "../FizzBuzz/FizzBuzz.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "FizzBuzz >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.4.0",
       "NUnit3TestAdapter >= 3.15.1",
       "nunit >= 3.12.0"
@@ -4650,7 +4669,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/mnt/sdb/code/DriveCentric/FizzBuzz/FizzBuzz.csproj": {
+              "projectPath": "/mnt/sdb/code/DriveCentric/FizzBuzz/FizzBuzz.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

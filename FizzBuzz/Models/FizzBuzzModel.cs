@@ -9,10 +9,15 @@ namespace FizzBuzz.Models
 {
     public class FizzBuzzModel
     {
-        public static FizzBuzz GetFizzBuzz()
+        List<string> fizzBuzzList;
+        public IEnumerable<string> GetFizzBuzzCollection(int minimum, int maximum)
         {
-            var output = new FizzBuzz("FIZZBUZZ");
-            return output;
+            fizzBuzzList = new List<string>();
+            for(var i = minimum; i <= maximum; i++)
+            {
+                fizzBuzzList.Add(i.ToString());
+            }
+            return fizzBuzzList;
         }
     }
 }
