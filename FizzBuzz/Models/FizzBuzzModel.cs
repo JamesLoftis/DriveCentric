@@ -15,20 +15,20 @@ namespace FizzBuzz.Models
         const int MINIMUM = 1;
         public IEnumerable<string> CreateFizzBuzzCollection(string content)
         {
-            var RequestDto = content.ParseJson();
+            var ResponseDto = content.ParseJson();
             List<string> returnList;
             
-            if(RequestDto.HasErrors())
+            if(ResponseDto.HasErrors())
             {
                 returnList = GetErrorList("Errors occurred parsing JSON");
             } 
-            else if(RequestDto.Maximum.IsNotValid())
-            {
-                returnList = GetErrorList("Maximum value is not valid");
-            }
+            // else if(ResponseDto.Maximum.IsNotValid())
+            // {
+            //     returnList = GetErrorList("Maximum value is not valid");
+            // }
             else
             {
-                returnList = GetListOfProperStrings(RequestDto);
+                returnList = GetListOfProperStrings(ResponseDto);
             }
             
             return returnList;
@@ -39,13 +39,13 @@ namespace FizzBuzz.Models
             return new List<string> {error};
         }
 
-        private List<string> GetListOfProperStrings(RequestDto RequestDto)
+        private List<string> GetListOfProperStrings(ResponseDto ResponseDto)
         {
             var returnList = new List<string>();
             
-            for(var current = MINIMUM; current <= RequestDto.Maximum; current++)
+            for(var current = MINIMUM; current <= ResponseDto.Maximum; current++)
             {
-                returnList.Add(GetProperString(current, RequestDto.TriggerDtoCollection));
+                returnList.Add(GetProperString(current, ResponseDto.TriggerDtoCollection));
             }
             return returnList;
         }

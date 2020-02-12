@@ -6,6 +6,8 @@ using FizzBuzz.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FizzBuzz.Helpers;
+using FizzBuzz.Dto;
+using System.Text.Json;
 
 namespace FizzBuzz.Controllers
 {
@@ -20,20 +22,20 @@ namespace FizzBuzz.Controllers
         }
 
         [HttpPost]
-        public string[] Post([FromBody] string content = null)
+        public RequestDto Post([FromBody]RequestDto args)
         {
-            try{
-                if(string.IsNullOrEmpty(content)){
-                    throw new ArgumentException($"Error! Body did not contain content.");
-                }
-                
-                return fizzBuzzModel.CreateFizzBuzzCollection(content).ToArray();
-            } catch(Exception ex)
-            {
-                var returnVal = new List<string>();
-                returnVal.Add(ex.Message);
-                return  returnVal.ToArray();
-            }
+            // try{
+                // if(string.IsNullOrEmpty(content)){
+                //     throw new ArgumentException($"Error! Body did not contain content.");
+                // }
+                return args;
+                // return fizzBuzzModel.CreateFizzBuzzCollection(content).ToArray();
+            // } catch(Exception ex)
+            // {
+            //     var returnVal = new List<string>();
+            //     returnVal.Add(ex.Message);
+            //     return  returnVal.ToArray();
+            // }
         }
     }
 }

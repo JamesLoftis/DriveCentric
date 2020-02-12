@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 using FizzBuzz.Dto;
+using System.Text.Json;
 
 namespace FizzBuzz.Helpers
 {
@@ -22,26 +21,27 @@ namespace FizzBuzz.Helpers
             return number % multiple == 0;
         }
 
-        public static RequestDto ParseJson(this string content)
+        public static ResponseDto ParseJson(this string content)
         {
-            var RequestDto = new RequestDto();
+            var ResponseDto = new ResponseDto();
             try
             {
-                RequestDto = JsonConvert.DeserializeObject<RequestDto>(content, new RequestConvertor());
+                // ResponseDto = JsonConvert.DeserializeObject<ResponseDto>(content, new RequestConvertor());
+                ResponseDto = JsonSerializer.Deserialize<ResponseDto>(content);
             }
             catch(Exception ex)
             {
-                RequestDto.Error = "Error Parsing JSON: " + ex.Message;
+                ResponseDto.Error = "Error Parsing JSON: " + ex.Message;
             }
-            return RequestDto;
+            return ResponseDto;
         }
 
-        public static bool HasErrors(this RequestDto contentDto)
+        public static bool HasErrors(this ResponseDto contentDto)
         {
             return !string.IsNullOrEmpty(contentDto.Error);
         }
 
-        public static bool IsEqualTo(this RequestDto firstDto, RequestDto secondDto)
+        public static bool IsEqualTo(this ResponseDto firstDto, ResponseDto secondDto)
         {
             return firstDto.Maximum == secondDto.Maximum &&
                    firstDto.Error == secondDto.Error &&

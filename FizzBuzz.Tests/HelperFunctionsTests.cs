@@ -24,7 +24,7 @@ namespace FizzBuzz.Tests
             var json = "{\"Maximum\": \"100\", \"TriggerDtoCollection\": [{\"Multiple\": 3,\"Word\": \"Fizz\"   },{\"Multiple\": 5,\"Word\": \"Buzz\"}]}";
 
             var obj =  json.ParseJson();
-            var comparisonObj = new RequestDto()
+            var comparisonObj = new ResponseDto()
             {
                 Maximum = 100,
                 TriggerDtoCollection = new List<TriggerDto>() 
