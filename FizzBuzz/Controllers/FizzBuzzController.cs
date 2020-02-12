@@ -21,8 +21,11 @@ namespace FizzBuzz.Controllers
         }
 
         [HttpPost]
-        public string[] Post([FromBody] int? maximum, TriggerCollection triggerParam = null)
+        public string[] Post([FromBody] string params = null)
         {
+            //TODO: MUST PARSE string JSON to 2 values. One int and one class TriggerCollection
+            //TODO: OLD PARAMS int? maximum, TriggerCollection triggerParam
+            //TODO: ALSO NEEDS A LOT OF TESTS
             const int MINIMUM = 1;
             var triggers = triggerParam ?? new TriggerCollection();
             if(maximum.IsValid())
