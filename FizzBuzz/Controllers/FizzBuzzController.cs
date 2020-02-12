@@ -22,11 +22,18 @@ namespace FizzBuzz.Controllers
         [HttpPost]
         public string[] Post([FromBody] string content = null)
         {
-            if(string.IsNullOrEmpty(content)){
-                throw new ArgumentException($"Error! Body did not contain content.");
+            try{
+                if(string.IsNullOrEmpty(content)){
+                    throw new ArgumentException($"Error! Body did not contain content.");
+                }
+                
+                return fizzBuzzModel.CreateFizzBuzzCollection(content).ToArray();
+            } catch(Exception ex)
+            {
+                var returnVal = new List<string>();
+                returnVal.Add(ex.Message);
+                return  returnVal.ToArray();
             }
-            
-            return fizzBuzzModel.CreateFizzBuzzCollection(content).ToArray();
         }
     }
 }

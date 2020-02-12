@@ -12,7 +12,6 @@ namespace FizzBuzz.Models
 {
     public class FizzBuzzModel : IModel
     {
-        IEnumerable<TriggerDto> triggerCollection;
         const int MINIMUM = 1;
         public IEnumerable<string> CreateFizzBuzzCollection(string content)
         {

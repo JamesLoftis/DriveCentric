@@ -10,7 +10,7 @@ using FizzBuzz.Dto;
 
 namespace FizzBuzz.Helpers
 {
-    public static class FizzBuzzHelpers
+    public static class Helpers
     {
         public static bool IsNotValid(this int? candidate)
         {
@@ -27,11 +27,11 @@ namespace FizzBuzz.Helpers
             var RequestDto = new RequestDto();
             try
             {
-                RequestDto = JsonConvert.DeserializeObject<RequestDto>(content);
+                RequestDto = JsonConvert.DeserializeObject<RequestDto>(content, new RequestConvertor());
             }
             catch(Exception ex)
             {
-                RequestDto.Error = ex.Message;
+                RequestDto.Error = "Error Parsing JSON: " + ex.Message;
             }
             return RequestDto;
         }
@@ -39,6 +39,38 @@ namespace FizzBuzz.Helpers
         public static bool HasErrors(this RequestDto contentDto)
         {
             return !string.IsNullOrEmpty(contentDto.Error);
+        }
+
+        public static bool IsEqualTo(this RequestDto firstDto, RequestDto secondDto)
+        {
+            return firstDto.Maximum == secondDto.Maximum &&
+                   firstDto.Error == secondDto.Error &&
+                   firstDto.TriggerDtoCollection.IsEqualTo(secondDto.TriggerDtoCollection);
+        }
+
+        public static bool IsEqualTo(this List<TriggerDto> firstCollection, List<TriggerDto> secondCollection)
+        {
+            var equal = false;
+            if(firstCollection.Count == secondCollection.Count)
+            {
+                equal = true;
+                for(var i = 0; i < firstCollection.Count; i++)
+                {
+                    var firstTrigger = firstCollection[i];
+                    var secondTrigger = secondCollection[i];
+                    if(!firstTrigger.IsEqualTo(secondTrigger))
+                    {
+                        equal = false;
+                        break;
+                    }
+                }
+            }
+            return equal;
+        }
+
+        public static bool IsEqualTo(this TriggerDto firstTrigger, TriggerDto secondTrigger)
+        {
+            return firstTrigger.Multiple == secondTrigger.Multiple && firstTrigger.Word == secondTrigger.Word;
         }
     }
 }

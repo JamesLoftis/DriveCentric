@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/sdb/code/DriveCentric/FizzBuzz.Tests/FizzBuzz.Tests.csproj": {}
+    "/home/jamesl/repos/personal/DriveCentric/FizzBuzz.Tests/FizzBuzz.Tests.csproj": {}
   },
   "projects": {
-    "/mnt/sdb/code/DriveCentric/FizzBuzz.Tests/FizzBuzz.Tests.csproj": {
+    "/home/jamesl/repos/personal/DriveCentric/FizzBuzz.Tests/FizzBuzz.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/sdb/code/DriveCentric/FizzBuzz.Tests/FizzBuzz.Tests.csproj",
+        "projectUniqueName": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz.Tests/FizzBuzz.Tests.csproj",
         "projectName": "FizzBuzz.Tests",
-        "projectPath": "/mnt/sdb/code/DriveCentric/FizzBuzz.Tests/FizzBuzz.Tests.csproj",
-        "packagesPath": "/home/james/.nuget/packages/",
-        "outputPath": "/mnt/sdb/code/DriveCentric/FizzBuzz.Tests/obj/",
+        "projectPath": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz.Tests/FizzBuzz.Tests.csproj",
+        "packagesPath": "/home/jamesl/.nuget/packages/",
+        "outputPath": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/james/.nuget/NuGet/NuGet.Config"
+          "/home/jamesl/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -25,8 +25,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "/mnt/sdb/code/DriveCentric/FizzBuzz/FizzBuzz.csproj": {
-                "projectPath": "/mnt/sdb/code/DriveCentric/FizzBuzz/FizzBuzz.csproj"
+              "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/FizzBuzz.csproj": {
+                "projectPath": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/FizzBuzz.csproj"
               }
             }
           }
@@ -72,17 +72,17 @@
         }
       }
     },
-    "/mnt/sdb/code/DriveCentric/FizzBuzz/FizzBuzz.csproj": {
+    "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/FizzBuzz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/sdb/code/DriveCentric/FizzBuzz/FizzBuzz.csproj",
+        "projectUniqueName": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/FizzBuzz.csproj",
         "projectName": "FizzBuzz",
-        "projectPath": "/mnt/sdb/code/DriveCentric/FizzBuzz/FizzBuzz.csproj",
-        "packagesPath": "/home/james/.nuget/packages/",
-        "outputPath": "/mnt/sdb/code/DriveCentric/FizzBuzz/obj/",
+        "projectPath": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/FizzBuzz.csproj",
+        "packagesPath": "/home/jamesl/.nuget/packages/",
+        "outputPath": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/james/.nuget/NuGet/NuGet.Config"
+          "/home/jamesl/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

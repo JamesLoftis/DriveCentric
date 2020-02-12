@@ -34,13 +34,5 @@ namespace FizzBuzz.Tests
             }
             Assert.IsTrue(getFailed);
         }
-        [Test]
-        public void JSON_Test()
-        {
-            var json = "{\"Maximum\": \"100\",\"Triggers\": [{\"Multiple\": 3,\"Word\": \"Fizz\"   },{\"Multiple\": 5,\"Word\": \"Buzz\"}]}\"";
-
-            var obj =  json.ParseJson();
-            Assert.Equals("a", "b");
-        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace FizzBuzz.Dto
         {
             TriggerDtoCollection = new List<TriggerDto>();
         }
-        [JsonProperty] 
+        [JsonProperty("maximum")] 
         public int? Maximum {get;set;}
         
-        [JsonProperty]
-        public IEnumerable<TriggerDto> TriggerDtoCollection{get;set;}
+        [JsonProperty("triggers")]
+        public List<TriggerDto> TriggerDtoCollection{get;set;}
 
         public string Error {get;set;}
     }

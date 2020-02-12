@@ -4,10 +4,10 @@ namespace FizzBuzz.Dto
 {
     public class TriggerDto
     {
-        [JsonProperty]
+        [JsonProperty("multiple")]
         public int Multiple {get;set;}
         
-        [JsonProperty]
+        [JsonProperty("word")]
         public string Word {get;set;}
     }
 }
