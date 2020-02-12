@@ -19,7 +19,7 @@ namespace FizzBuzz.Tests
         {
             const int min = 1;
             const int max = 100;
-            var testArray = testModel.GetFizzBuzzCollection(min, max).ToArray();
+            var testArray = testModel.CreateFizzBuzzCollection(min, max).ToArray();
             Assert.True(testArray.First() == min.ToString());
             Assert.True(testArray.First() == min.ToString());
         }

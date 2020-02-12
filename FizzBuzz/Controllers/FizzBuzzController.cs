@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using FizzBuzz.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using FizzBuzz.Helpers;
+using FizzBuzz.Trigger;
 
 namespace FizzBuzz.Controllers
 {
@@ -12,18 +14,25 @@ namespace FizzBuzz.Controllers
     [Route("[controller]")]
     public class FizzBuzzController : ControllerBase
     {
-        private readonly ILogger<FizzBuzzController> _logger;
-        private readonly FizzBuzzModel fizzBuzzModel;
-        public FizzBuzzController(ILogger<FizzBuzzController> logger)
+        private readonly IModel fizzBuzzModel;
+        public FizzBuzzController(IModel model)
         {
-            _logger = logger;
-            fizzBuzzModel = new FizzBuzzModel();
+            fizzBuzzModel = model ?? new FizzBuzzModel();
         }
 
-        [HttpGet]
-        public string[] Get()
+        [HttpPost]
+        public string[] Post([FromBody] int? maximum, TriggerCollection triggerParam = null)
         {
-            return fizzBuzzModel.GetFizzBuzzCollection(1, 100).ToArray();
+            const int MINIMUM = 1;
+            var triggers = triggerParam ?? new TriggerCollection();
+            if(maximum.IsValid())
+            {
+                return fizzBuzzModel.CreateFizzBuzzCollection(MINIMUM, (int)maximum, triggers).ToArray();
+            }
+            else 
+            {
+                throw new ArgumentException($"Error. {maximum} is not valid as a maximum number.");
+            }
         }
     }
 }
