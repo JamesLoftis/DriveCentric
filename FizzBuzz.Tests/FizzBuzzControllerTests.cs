@@ -3,6 +3,8 @@ using FizzBuzz.Controllers;
 using FizzBuzz;
 using System.Linq;
 using System;
+using Newtonsoft.Json;
+using FizzBuzz.Helpers;
 
 namespace FizzBuzz.Tests
 {
@@ -31,6 +33,14 @@ namespace FizzBuzz.Tests
                 getFailed = true;
             }
             Assert.IsTrue(getFailed);
+        }
+        [Test]
+        public void JSON_Test()
+        {
+            var json = "{\"Maximum\": \"100\",\"Triggers\": [{\"Multiple\": 3,\"Word\": \"Fizz\"   },{\"Multiple\": 5,\"Word\": \"Buzz\"}]}\"";
+
+            var obj =  json.ParseJson();
+            Assert.Equals("a", "b");
         }
     }
 }

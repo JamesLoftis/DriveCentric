@@ -1,7 +1,13 @@
 {
     "Maximum": "100",
-    "Triggers": {
-      "Multiple": 3,
-      "Word" : "test"
-    }
+    "Triggers": [
+        {
+            "Multiple": 3,
+            "Word": "Fizz"
+        },
+        {
+            "Multiple": 5,
+            "Word": "Buzz"
+        }
+    ]
 }
