@@ -1,64 +1,55 @@
 using NUnit.Framework;
 using FizzBuzz.Models;
+using FizzBuzz.Dto;
 using System.Linq;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace FizzBuzz.Tests
 {
     public class FizzBuzzModelTests
     {
         FizzBuzzModel testModel;
+        RequestDto testRequest;
 
         [SetUp]
         public void Setup()
         {
             testModel = new FizzBuzzModel();
+            testRequest = new RequestDto();
+            testRequest.Maximum = 100;
+            testRequest.TriggerDtoCollection = new List<TriggerDto>();
         }
 
         [Test]
-        public void When_OriginalNumbers_ArePassedIn_Should_ReturnAnArrayStartingWith_1()
+        public void When_AnythingIsPassedIn_Should_ReturnAnArrayStartingWith_1()
         {
-            const int min = 1;
-            const int max = 100;
-            var testArray = testModel.CreateFizzBuzzCollection(min, max).ToArray();
-            Assert.True(testArray.First() == min.ToString());
-            Assert.True(testArray.First() == min.ToString());
+            const string min = "1";
+            var json = JsonConvert.SerializeObject(testRequest);
+            var testArray = testModel.CreateFizzBuzzCollection(json).ToArray();
+            Assert.True(testArray.First() == min, testArray.First() ?? "");
         }
 
         [Test]
         public void When_OriginalNumbers_ArePassedIn_Should_ReturnAnArrayEndingWith_100()
         {
-            const int min = 1;
             const int max = 100;
-            var testArray = testModel.CreateFizzBuzzCollection(min, max).ToArray();
-            Assert.True(testArray.Last() == max.ToString());
-        }
-
-        [Test]
-        public void WhenMinium_IsPassedIn_ReturnShould_StartWithMinimum()
-        {
-            string[] testArray;
-            for(var i = 0; i < 5; i++)
-            {
-                testArray = testModel.CreateFizzBuzzCollection(i, 100).ToArray();
-                Assert.True(testArray.First() == i.ToString());
-            }
+            testRequest.Maximum = max;
+            var json = JsonConvert.SerializeObject(testRequest);
+            var testArray = testModel.CreateFizzBuzzCollection(json).ToArray();
+            Assert.True(testArray.Last() == max.ToString(), testArray.First() ?? "");
         }
 
         [Test]
         public void WhenMaximum_IsPassedIn_ReturnShould_EndWithMaximum()
         {
-            string[] testArray;
-            for(var i = 10; i < 15; i++)
+            for(var i = 1; i < 5; i++)
             {
-                testArray = testModel.CreateFizzBuzzCollection(1, i).ToArray();
-                Assert.True(testArray.Last() == i.ToString());
+                testRequest.Maximum = i;
+                var json = JsonConvert.SerializeObject(testRequest);
+                var testArray = testModel.CreateFizzBuzzCollection(json).ToArray();
+                Assert.True(testArray.Last() == i.ToString(), testArray.Last() ?? "");
             }
-        }
-        
-        [Test]
-        public void WhenMinium_IsFive_ReturnShould_StartWithFive()
-        {
-            Assert.Pass();
         }
     }
 }

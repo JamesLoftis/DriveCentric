@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FizzBuzz.Models;
-using FizzBuzz.Trigger;
 
 namespace FizzBuzz.Tests
 {
     public class MockModel : IModel
     {
-        public IEnumerable<string>  CreateFizzBuzzCollection(int minimum, int maximum, TriggerCollection triggers)
+        public IEnumerable<string>  CreateFizzBuzzCollection(string content)
         {
             return new List<string>();
         }

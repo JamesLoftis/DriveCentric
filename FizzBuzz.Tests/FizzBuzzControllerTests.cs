@@ -19,7 +19,7 @@ namespace FizzBuzz.Tests
         }
         
         [Test]
-        public void When_CallingGet_WithoutMinimum_ShouldFail()
+        public void When_CallingGet_WithoutContent_ShouldGetFailureMessage()
         {
             var getFailed = false;
             try
@@ -31,51 +31,6 @@ namespace FizzBuzz.Tests
                 getFailed = true;
             }
             Assert.IsTrue(getFailed);
-        }
-
-        [Test]
-        public void When_CallingGet_WithMinimumLessThanOne_ShouldFail()
-        {
-            var getFailed = false;
-            try
-            {
-                testController.Post(-1);
-            } 
-            catch(ArgumentException)
-            {
-                getFailed = true;
-            }
-            Assert.IsTrue(getFailed);
-        }
-
-        [Test]
-        public void When_CallingGet_WithMinimumEqualToOne_ShouldPass()
-        {
-            var getFailed = false;
-            try
-            {
-                testController.Post(1);
-            } 
-            catch(ArgumentException)
-            {
-                getFailed = true;
-            }
-            Assert.IsFalse(getFailed);
-        }
-
-        [Test]
-        public void When_CallingGet_WithMinimumGreaterThanOne_ShouldPass()
-        {
-            var getFailed = false;
-            try
-            {
-                testController.Post(2);
-            } 
-            catch(ArgumentException)
-            {
-                getFailed = true;
-            }
-            Assert.IsFalse(getFailed);
         }
     }
 }

@@ -1,0 +1,7 @@
+{
+    "Maximum": "100",
+    "Triggers": {
+      "Multiple": 3,
+      "Word" : "test"
+    }
+}

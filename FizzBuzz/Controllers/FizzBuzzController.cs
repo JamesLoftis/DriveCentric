@@ -6,7 +6,6 @@ using FizzBuzz.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FizzBuzz.Helpers;
-using FizzBuzz.Trigger;
 
 namespace FizzBuzz.Controllers
 {
@@ -21,21 +20,13 @@ namespace FizzBuzz.Controllers
         }
 
         [HttpPost]
-        public string[] Post([FromBody] string params = null)
+        public string[] Post([FromBody] string content = null)
         {
-            //TODO: MUST PARSE string JSON to 2 values. One int and one class TriggerCollection
-            //TODO: OLD PARAMS int? maximum, TriggerCollection triggerParam
-            //TODO: ALSO NEEDS A LOT OF TESTS
-            const int MINIMUM = 1;
-            var triggers = triggerParam ?? new TriggerCollection();
-            if(maximum.IsValid())
-            {
-                return fizzBuzzModel.CreateFizzBuzzCollection(MINIMUM, (int)maximum, triggers).ToArray();
+            if(string.IsNullOrEmpty(content)){
+                throw new ArgumentException($"Error! Body did not contain content.");
             }
-            else 
-            {
-                throw new ArgumentException($"Error. {maximum} is not valid as a maximum number.");
-            }
+            
+            return fizzBuzzModel.CreateFizzBuzzCollection(content).ToArray();
         }
     }
 }

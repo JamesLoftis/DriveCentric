@@ -16,3 +16,5 @@
 /mnt/sdb/code/DriveCentric/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.RazorTargetAssemblyInfo.cache
 /mnt/sdb/code/DriveCentric/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.dll
 /mnt/sdb/code/DriveCentric/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.pdb
+/mnt/sdb/code/DriveCentric/FizzBuzz/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/mnt/sdb/code/DriveCentric/FizzBuzz/obj/Debug/netcoreapp3.1/FizzBuzz.csproj.CopyComplete
