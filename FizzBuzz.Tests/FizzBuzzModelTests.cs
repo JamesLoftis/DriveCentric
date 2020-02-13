@@ -10,13 +10,13 @@ namespace FizzBuzz.Tests
     public class FizzBuzzModelTests
     {
         FizzBuzzModel testModel;
-        ResponseDto testRequest;
+        RequestDto testRequest;
 
         [SetUp]
         public void Setup()
         {
             testModel = new FizzBuzzModel();
-            testRequest = new ResponseDto();
+            testRequest = new RequestDto();
             testRequest.Maximum = 100;
             testRequest.TriggerDtoCollection = new List<TriggerDto>();
         }

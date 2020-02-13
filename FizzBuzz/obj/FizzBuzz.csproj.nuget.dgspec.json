@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/FizzBuzz.csproj": {}
+    "/home/jamesl/repos/DriveCentric/FizzBuzz/FizzBuzz.csproj": {}
   },
   "projects": {
-    "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/FizzBuzz.csproj": {
+    "/home/jamesl/repos/DriveCentric/FizzBuzz/FizzBuzz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/FizzBuzz.csproj",
+        "projectUniqueName": "/home/jamesl/repos/DriveCentric/FizzBuzz/FizzBuzz.csproj",
         "projectName": "FizzBuzz",
-        "projectPath": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/FizzBuzz.csproj",
+        "projectPath": "/home/jamesl/repos/DriveCentric/FizzBuzz/FizzBuzz.csproj",
         "packagesPath": "/home/jamesl/.nuget/packages/",
-        "outputPath": "/home/jamesl/repos/personal/DriveCentric/FizzBuzz/obj/",
+        "outputPath": "/home/jamesl/repos/DriveCentric/FizzBuzz/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/jamesl/.nuget/NuGet/NuGet.Config"

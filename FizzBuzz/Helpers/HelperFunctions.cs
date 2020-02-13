@@ -21,27 +21,27 @@ namespace FizzBuzz.Helpers
             return number % multiple == 0;
         }
 
-        public static ResponseDto ParseJson(this string content)
+        public static RequestDto ParseJson(this string content)
         {
-            var ResponseDto = new ResponseDto();
+            var RequestDto = new RequestDto();
             try
             {
-                // ResponseDto = JsonConvert.DeserializeObject<ResponseDto>(content, new RequestConvertor());
-                ResponseDto = JsonSerializer.Deserialize<ResponseDto>(content);
+                // RequestDto = JsonConvert.DeserializeObject<RequestDto>(content, new RequestConvertor());
+                RequestDto = JsonSerializer.Deserialize<RequestDto>(content);
             }
             catch(Exception ex)
             {
-                ResponseDto.Error = "Error Parsing JSON: " + ex.Message;
+                RequestDto.Error = "Error Parsing JSON: " + ex.Message;
             }
-            return ResponseDto;
+            return RequestDto;
         }
 
-        public static bool HasErrors(this ResponseDto contentDto)
+        public static bool HasErrors(this RequestDto contentDto)
         {
             return !string.IsNullOrEmpty(contentDto.Error);
         }
 
-        public static bool IsEqualTo(this ResponseDto firstDto, ResponseDto secondDto)
+        public static bool IsEqualTo(this RequestDto firstDto, RequestDto secondDto)
         {
             return firstDto.Maximum == secondDto.Maximum &&
                    firstDto.Error == secondDto.Error &&
