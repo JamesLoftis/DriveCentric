@@ -15,27 +15,11 @@ namespace FizzBuzz.Controllers
     [Route("[controller]")]
     public class FizzBuzzController : ControllerBase
     {
-        private readonly IModel fizzBuzzModel;
-        public FizzBuzzController(IModel model)
-        {
-            fizzBuzzModel = model ?? new FizzBuzzModel();
-        }
-
         [HttpPost]
-        public RequestDto Post([FromBody]RequestDto args)
+        public string[] Post([FromBody]RequestDto dto)
         {
-            // try{
-                // if(string.IsNullOrEmpty(content)){
-                //     throw new ArgumentException($"Error! Body did not contain content.");
-                // }
-                return args;
-                // return fizzBuzzModel.CreateFizzBuzzCollection(content).ToArray();
-            // } catch(Exception ex)
-            // {
-            //     var returnVal = new List<string>();
-            //     returnVal.Add(ex.Message);
-            //     return  returnVal.ToArray();
-            // }
+            var model = new FizzBuzzModel();
+            return model.CreateFizzBuzzCollection(dto).ToArray();
         }
     }
 }

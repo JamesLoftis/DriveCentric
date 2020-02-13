@@ -10,25 +10,24 @@ using Newtonsoft.Json.Linq;
 
 namespace FizzBuzz.Models
 {
-    public class FizzBuzzModel : IModel
+    public class FizzBuzzModel
     {
         const int MINIMUM = 1;
-        public IEnumerable<string> CreateFizzBuzzCollection(string content)
+        public IEnumerable<string> CreateFizzBuzzCollection(RequestDto dto)
         {
-            var RequestDto = content.ParseJson();
             List<string> returnList;
             
-            if(RequestDto.HasErrors())
+            if(dto.HasErrors())
             {
                 returnList = GetErrorList("Errors occurred parsing JSON");
             } 
-            // else if(RequestDto.Maximum.IsNotValid())
-            // {
-            //     returnList = GetErrorList("Maximum value is not valid");
-            // }
+            else if(dto.Maximum.IsNotValid())
+            {
+                returnList = GetErrorList("Maximum value is not valid");
+            }
             else
             {
-                returnList = GetListOfProperStrings(RequestDto);
+                returnList = GetListOfProperStrings(dto);
             }
             
             return returnList;
@@ -50,10 +49,10 @@ namespace FizzBuzz.Models
             return returnList;
         }
 
-        private string GetProperString(int number, IEnumerable<TriggerDto> Triggers)
+        private string GetProperString(int number, TriggerDto[] triggers)
         {
             string returnString = "";
-            foreach(var trigger in Triggers)
+            foreach(var trigger in triggers)
             {
                 if(number.IsMultipleOf(trigger.Multiple))
                 {

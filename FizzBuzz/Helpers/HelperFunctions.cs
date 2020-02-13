@@ -11,9 +11,9 @@ namespace FizzBuzz.Helpers
 {
     public static class Helpers
     {
-        public static bool IsNotValid(this int? candidate)
+        public static bool IsNotValid(this int candidate)
         {
-            return candidate == null || candidate <= 0;
+            return candidate <= 0;
         }
 
         public static bool IsMultipleOf(this int number, int multiple)
@@ -26,7 +26,6 @@ namespace FizzBuzz.Helpers
             var RequestDto = new RequestDto();
             try
             {
-                // RequestDto = JsonConvert.DeserializeObject<RequestDto>(content, new RequestConvertor());
                 RequestDto = JsonSerializer.Deserialize<RequestDto>(content);
             }
             catch(Exception ex)

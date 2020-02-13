@@ -9,46 +9,46 @@ namespace FizzBuzz.Tests
 {
     public class FizzBuzzModelTests
     {
-        FizzBuzzModel testModel;
-        RequestDto testRequest;
-
-        [SetUp]
-        public void Setup()
-        {
-            testModel = new FizzBuzzModel();
-            testRequest = new RequestDto();
-            testRequest.Maximum = 100;
-            testRequest.Triggers = new List<Trigger>();
-        }
-
         [Test]
         public void When_AnythingIsPassedIn_Should_ReturnAnArrayStartingWith_1()
         {
             const string min = "1";
-            var json = JsonConvert.SerializeObject(testRequest);
-            var testArray = testModel.CreateFizzBuzzCollection(json).ToArray();
-            Assert.True(testArray.First() == min, testArray.First() ?? "");
+
+            var testModel = new FizzBuzzModel();
+            var testRequest = new RequestDto();
+            testRequest.Maximum = 100;
+            testRequest.Triggers = new TriggerDto[5];
+            var testArray = testModel.CreateFizzBuzzCollection(testRequest).ToArray();
+            Assert.True(testArray.First() == min);
         }
 
         [Test]
         public void When_OriginalNumbers_ArePassedIn_Should_ReturnAnArrayEndingWith_100()
         {
+                       var testModel = new FizzBuzzModel();
+            const string min = "1";
+            var testRequest = new RequestDto();
+            testRequest.Maximum = 100;
+            testRequest.Triggers = new TriggerDto[5];
             const int max = 100;
             testRequest.Maximum = max;
-            var json = JsonConvert.SerializeObject(testRequest);
-            var testArray = testModel.CreateFizzBuzzCollection(json).ToArray();
-            Assert.True(testArray.Last() == max.ToString(), testArray.First() ?? "");
+            var testArray = testModel.CreateFizzBuzzCollection(testRequest).ToArray();
+            Assert.True(testArray.Last() == max.ToString());
         }
 
         [Test]
         public void WhenMaximum_IsPassedIn_ReturnShould_EndWithMaximum()
         {
+                       var testModel = new FizzBuzzModel();
+            const string min = "1";
+            var testRequest = new RequestDto();
+            testRequest.Maximum = 100;
+            testRequest.Triggers = new TriggerDto[5];
             for(var i = 1; i < 5; i++)
             {
                 testRequest.Maximum = i;
-                var json = JsonConvert.SerializeObject(testRequest);
-                var testArray = testModel.CreateFizzBuzzCollection(json).ToArray();
-                Assert.True(testArray.Last() == i.ToString(), testArray.Last() ?? "");
+                var testArray = testModel.CreateFizzBuzzCollection(testRequest).ToArray();
+                Assert.True(testArray.Last() == i.ToString());
             }
         }
     }
