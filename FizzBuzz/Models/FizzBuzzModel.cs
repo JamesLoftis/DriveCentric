@@ -17,13 +17,13 @@ namespace FizzBuzz.Models
         {
             List<string> returnList;
             
-            if(dto.HasErrors())
-            {
-                returnList = GetErrorList("Errors occurred parsing JSON");
-            } 
-            else if(dto.Maximum.IsNotValid())
+            if(dto.Maximum.IsNotValid())
             {
                 returnList = GetErrorList("Maximum value is not valid");
+            }
+            else if(dto.Triggers.AreNotValid())
+            {
+                returnList = GetErrorList("One ore more multiplier are invalid");
             }
             else
             {
@@ -52,7 +52,7 @@ namespace FizzBuzz.Models
         private string GetProperString(int number, TriggerDto[] triggers)
         {
             string returnString = "";
-            foreach(var trigger in triggers)
+            foreach(var trigger in triggers ?? new TriggerDto[0])
             {
                 if(number.IsMultipleOf(trigger.Multiple))
                 {
@@ -61,7 +61,5 @@ namespace FizzBuzz.Models
             }
             return string.IsNullOrEmpty(returnString) ? number.ToString() : returnString;
         }
-
-
     }
 }
