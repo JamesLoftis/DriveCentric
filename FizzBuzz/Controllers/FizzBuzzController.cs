@@ -15,11 +15,14 @@ namespace FizzBuzz.Controllers
     [Route("[controller]")]
     public class FizzBuzzController : ControllerBase
     {
-        [HttpPost]
-        public string[] Post([FromBody]RequestDto dto)
+        FizzBuzzModel model;
+        public FizzBuzzController()
         {
-            var model = new FizzBuzzModel();
-            return model.CreateFizzBuzzCollection(dto).ToArray();
+             model = new FizzBuzzModel();
         }
+
+        [HttpPost]
+        public string[] Post([FromBody]RequestDto dto) => model.CreateFizzBuzzCollection(dto).ToArray();
+        
     }
 }

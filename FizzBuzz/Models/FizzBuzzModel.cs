@@ -17,11 +17,11 @@ namespace FizzBuzz.Models
         {
             List<string> returnList;
             
-            if(dto.Maximum.IsNotValid())
+            if(dto.Maximum.IsNotValidMaximum())
             {
                 returnList = GetErrorList("Maximum value is not valid");
             }
-            else if(dto.Triggers.AreNotValid())
+            else if(dto.Triggers.ContainInvalidTriggerValues())
             {
                 returnList = GetErrorList("One ore more multiplier are invalid");
             }

@@ -11,19 +11,19 @@ namespace FizzBuzz.Helpers
 {
     public static class Helpers
     {
-        public static bool IsNotValid(this int candidate)
+        public static bool IsNotValidMaximum(this int candidate)
         {
             return candidate <= 0;
         }
 
         public static bool IsMultipleOf(this int number, int multiple)
         {
-            return number % multiple == 0;
+            return multiple != 0 && number % multiple == 0;
         }
 
-        public static bool AreNotValid(this TriggerDto[] triggers)
+        public static bool ContainInvalidTriggerValues(this TriggerDto[] triggers)
         {
-            return triggers.Any(x => x.multiple == 0 || x.multiple == null);
+            return triggers != null && triggers.Any(x => x == null || x.Multiple == null || x.Multiple == 0);
         }
     }
 }
