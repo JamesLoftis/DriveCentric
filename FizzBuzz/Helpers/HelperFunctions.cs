@@ -21,30 +21,9 @@ namespace FizzBuzz.Helpers
             return number % multiple == 0;
         }
 
-        public static RequestDto ParseJson(this string content)
-        {
-            var RequestDto = new RequestDto();
-            try
-            {
-                RequestDto = JsonSerializer.Deserialize<RequestDto>(content);
-            }
-            catch(Exception ex)
-            {
-                RequestDto.Error = "Error Parsing JSON: " + ex.Message;
-            }
-            return RequestDto;
-        }
-
         public static bool HasErrors(this RequestDto contentDto)
         {
             return !string.IsNullOrEmpty(contentDto.Error);
-        }
-
-        public static bool IsEqualTo(this RequestDto firstDto, RequestDto secondDto)
-        {
-            return firstDto.Maximum == secondDto.Maximum &&
-                   firstDto.Error == secondDto.Error &&
-                   firstDto.Triggers.IsEqualTo(secondDto.Triggers);
         }
 
         public static bool IsEqualTo(this TriggerDto[] firstCollection, TriggerDto[] secondCollection)
