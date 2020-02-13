@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "a3012d90-23f9-4091-b7bc-46c277a98cb3",
+		"name": "DriveCentric",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HappyPath",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Maximum\": 100,\n    \"Triggers\": [\n        {\n            \"Multiple\": 3,\n            \"Word\": \"Fizz\"\n        },\n        {\n            \"Multiple\": 5,\n            \"Word\": \"Buzz\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/FizzBuzz",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"FizzBuzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Error: No Maximum",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Maximum\": 100,\n    \"Triggers\": [\n        {\n            \"Multiple\": 3,\n            \"Word\": \"Fizz\"\n        },\n        {\n            \"Multiple\": 5,\n            \"Word\": \"Buzz\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/FizzBuzz",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"FizzBuzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HappyPath Reduced",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Maximum\": 100,\n    \"Triggers\": [\n        {\n            \"Multiple\": 3,\n            \"Word\": \"Fizz\"\n        },\n        {\n            \"Multiple\": 5,\n            \"Word\": \"Buzz\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/FizzBuzz",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"FizzBuzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HappyPath Empty Array",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Maximum\": 100,\n    \"Triggers\": [\n        {\n            \"Multiple\": 3,\n            \"Word\": \"Fizz\"\n        },\n        {\n            \"Multiple\": 5,\n            \"Word\": \"Buzz\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/FizzBuzz",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"FizzBuzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HappyPath No Triggers",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Maximum\": 100,\n    \"Triggers\": [\n        {\n            \"Multiple\": 3,\n            \"Word\": \"Fizz\"\n        },\n        {\n            \"Multiple\": 5,\n            \"Word\": \"Buzz\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/FizzBuzz",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"FizzBuzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Error :Divide By Zero",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Maximum\": 100,\n    \"Triggers\": [\n        {\n            \"Multiple\": 3,\n            \"Word\": \"Fizz\"\n        },\n        {\n            \"Multiple\": 5,\n            \"Word\": \"Buzz\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/FizzBuzz",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"FizzBuzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Error: no multiplier value",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Maximum\": 100,\n    \"Triggers\": [\n        {\n            \"Multiple\": 3,\n            \"Word\": \"Fizz\"\n        },\n        {\n            \n            \"Word\": \"Buzz\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/FizzBuzz",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"FizzBuzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HappyPath NoWord",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Maximum\": 100,\n    \"Triggers\": [\n        {\n            \"Multiple\": 3,\n            \"Word\": \"Fizz\"\n        },\n        {\n            \"Multiple\": 5,\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/FizzBuzz",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"FizzBuzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HappyPath Extended",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Maximum\": 100,\n    \"Triggers\": [\n        {\n            \"Multiple\": 3,\n            \"Word\": \"Fizz\"\n        },\n        {\n            \"Multiple\": 5,\n            \"Word\": \"Buzz\"\n        },\n        {\n            \"Multiple\": 7,\n            \"Word\": \"Pop\"\n        },\n        {\n            \"Multiple\": 9,\n            \"Word\": \"Bang\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/FizzBuzz",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"FizzBuzz"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
