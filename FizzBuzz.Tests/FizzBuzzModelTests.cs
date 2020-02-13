@@ -18,7 +18,7 @@ namespace FizzBuzz.Tests
             testModel = new FizzBuzzModel();
             testRequest = new RequestDto();
             testRequest.Maximum = 100;
-            testRequest.TriggerDtoCollection = new List<TriggerDto>();
+            testRequest.Triggers = new List<Trigger>();
         }
 
         [Test]

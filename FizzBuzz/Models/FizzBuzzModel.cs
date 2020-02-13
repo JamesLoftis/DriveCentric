@@ -39,21 +39,21 @@ namespace FizzBuzz.Models
             return new List<string> {error};
         }
 
-        private List<string> GetListOfProperStrings(RequestDto RequestDto)
+        private List<string> GetListOfProperStrings(RequestDto requestDto)
         {
             var returnList = new List<string>();
             
-            for(var current = MINIMUM; current <= RequestDto.Maximum; current++)
+            for(var current = MINIMUM; current <= requestDto.Maximum; current++)
             {
-                returnList.Add(GetProperString(current, RequestDto.TriggerDtoCollection));
+                returnList.Add(GetProperString(current, requestDto.Triggers));
             }
             return returnList;
         }
 
-        private string GetProperString(int number, IEnumerable<TriggerDto> triggerCollection)
+        private string GetProperString(int number, IEnumerable<TriggerDto> Triggers)
         {
             string returnString = "";
-            foreach(var trigger in triggerCollection)
+            foreach(var trigger in Triggers)
             {
                 if(number.IsMultipleOf(trigger.Multiple))
                 {

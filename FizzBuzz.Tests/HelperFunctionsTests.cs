@@ -21,16 +21,16 @@ namespace FizzBuzz.Tests
         [Test]
         public void ParseJson_Test()
         {
-            var json = "{\"Maximum\": \"100\", \"TriggerDtoCollection\": [{\"Multiple\": 3,\"Word\": \"Fizz\"   },{\"Multiple\": 5,\"Word\": \"Buzz\"}]}";
+            var json = "{\"Maximum\": \"100\", \"Triggers\": [{\"Multiple\": 3,\"Word\": \"Fizz\"   },{\"Multiple\": 5,\"Word\": \"Buzz\"}]}";
 
             var obj =  json.ParseJson();
             var comparisonObj = new RequestDto()
             {
                 Maximum = 100,
-                TriggerDtoCollection = new List<TriggerDto>() 
+                Triggers = new List<Trigger>() 
                 { 
-                    new TriggerDto(){Multiple = 3, Word = "Fizz" },
-                    new TriggerDto(){Multiple = 5, Word = "Buzz" }
+                    new Trigger(){Multiple = 3, Word = "Fizz" },
+                    new Trigger(){Multiple = 5, Word = "Buzz" }
                 }
             };
             

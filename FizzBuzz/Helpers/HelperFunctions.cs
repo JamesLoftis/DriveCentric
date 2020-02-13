@@ -45,16 +45,16 @@ namespace FizzBuzz.Helpers
         {
             return firstDto.Maximum == secondDto.Maximum &&
                    firstDto.Error == secondDto.Error &&
-                   firstDto.TriggerDtoCollection.IsEqualTo(secondDto.TriggerDtoCollection);
+                   firstDto.Triggers.IsEqualTo(secondDto.Triggers);
         }
 
-        public static bool IsEqualTo(this List<TriggerDto> firstCollection, List<TriggerDto> secondCollection)
+        public static bool IsEqualTo(this TriggerDto[] firstCollection, TriggerDto[] secondCollection)
         {
             var equal = false;
-            if(firstCollection.Count == secondCollection.Count)
+            if(firstCollection.Length == secondCollection.Length)
             {
                 equal = true;
-                for(var i = 0; i < firstCollection.Count; i++)
+                for(var i = 0; i < firstCollection.Length; i++)
                 {
                     var firstTrigger = firstCollection[i];
                     var secondTrigger = secondCollection[i];
